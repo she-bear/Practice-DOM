@@ -1,0 +1,14 @@
+.content {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.block {
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+}
+
+

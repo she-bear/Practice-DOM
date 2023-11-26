@@ -1,8 +1,10 @@
+// SET YOUR_ACCESS_KEY HERE
 const KEY = '';
 
 const imageElement = document.querySelector('.photo__image');
 const authorElement = document.querySelector('.photo__author');
 const bioElement = document.querySelector('.photo__bio');
+const buttonElement = document.querySelector('.button');
 const isLike = document.querySelector('.photo__like');
 
 
@@ -34,12 +36,13 @@ async function getData() {
         imageElement.src = data[0].urls.small;
         authorElement.textContent = data[0].user.name;
         if (data[0].user.bio !== null) {
-            bioElement = data[0].user.bio;
+            bioElement.textContent = data[0].user.bio;
         }
         isLike.style.opacity = 1;
     }
 }
 
+buttonElement.addEventListener('click', getData);
 
 isLike.addEventListener('click', () => {
     if (isLike.classList.contains('fa-regular')) {

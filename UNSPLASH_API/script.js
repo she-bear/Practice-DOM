@@ -25,6 +25,7 @@ async function fetchData() {
     }
 }
 
+
 async function getData() {
     const data = await fetchData();
     if (data.length === 0) {
@@ -38,7 +39,6 @@ async function getData() {
         isLike.style.opacity = 1;
     }
 }
-
 
 
 isLike.addEventListener('click', () => {

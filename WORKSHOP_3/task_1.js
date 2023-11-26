@@ -53,13 +53,20 @@ const productsData = [
 
 const selectElement = document.querySelector('#category-select');
 
-selectElement.onchange = function () {
-    const selectedCategory = selectElement.value;
-    console.log(selectedCategory);
+selectElement.addEventListener('change', () => {
+    const value = selectElement.value;
+    displayProducts(value);
+});
 
-    let
+function displayProducts(category) {
+    const productsList = document.getElementById('products-list');
+    productsList.innerHTML = '';
 
-    // switch (selectedCategory) {
-
-    // }
+    productsData.forEach((product) => {
+        if (category === '' || product.category === category) {
+            const listItem = document.createElement('li');
+            listItem.textContent = product.name;
+            productsList.appendChild(listItem);
+        }
+    });
 }
